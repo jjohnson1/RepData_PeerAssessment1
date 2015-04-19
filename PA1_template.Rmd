@@ -59,7 +59,7 @@ nMissingPoints <- sum(!complete.cases(raw))
 This tells us that there are `r nMissingPoints` observations with missing values.
 These missing values only occur in the "steps" variable, thus I focus on that 
 variable for the imputation step. To impute the missing values, I use the mean 
-number of steps for the interval, average over all days in the data set.
+number of steps for the interval, averaged over all days in the data set.
 
 ``` {r}
 imputed <- raw

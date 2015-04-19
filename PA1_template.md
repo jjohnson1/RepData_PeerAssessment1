@@ -1,9 +1,4 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 
 
 ## Loading and preprocessing the data
@@ -27,7 +22,7 @@ byDay <- raw %>% group_by(date) %>% summarize(total = sum(steps))
 hist(byDay$total, xlab="Total Steps", ylab="Number of Days", main="Total Steps per Day", col="lightgreen")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 ```r
 meanSteps <- mean(byDay$total, na.rm=T)
@@ -52,7 +47,7 @@ ggplot(byInterval, aes(x=interval, y=average)) + geom_line() +
   labs(title = "Average Steps by Interval")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 ```r
 maxInterval <- byInterval[which.max(byInterval$average),1]
@@ -101,7 +96,7 @@ hist(imputedByDay$total, xlab="Total Steps", ylab="Number of Days",
      main="Total Steps per Day", sub="Missing Values Imputed", col="lightgreen")
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
 ```r
 imputedMeanSteps <- mean(imputedByDay$total)
@@ -129,5 +124,5 @@ ggplot(imputedByDayType, aes(x=interval, y=average)) + geom_line() + facet_grid(
   labs(title="Average Steps by Interval")
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
 
